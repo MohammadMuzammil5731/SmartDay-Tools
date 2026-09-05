@@ -15,7 +15,7 @@ const Login = () => {
     setError('');
     try {
       // Sahi full absolute route link mapping bina kisi text miss ke
-      const res = await axios.post('https://onrender.com', formData);
+      const res = await axios.post('https://smartday-backend.onrender.com', formData);
       localStorage.setItem('token', res.data.token);
       navigate('/add-customer');
     } catch (err) {
