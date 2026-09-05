@@ -23,7 +23,7 @@ const AddCustomer = () => {
     setDuplicateRegNo('');
     try {
       const token = localStorage.getItem('token');
-      // Live cloud backend connection pipeline
+      // Sahi full backend endpoint URL
       await axios.post('https://onrender.com', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -42,7 +42,6 @@ const AddCustomer = () => {
       alert('Please fill out the form first with Registration Number');
       return;
     }
-    // Dynamic production link logic jo automatic Vercel link par route karegi
     const generatedLink = window.location.origin + "/verify/" + formData.regNo;
     setQrUrl(generatedLink);
     setShowQRModal(true);

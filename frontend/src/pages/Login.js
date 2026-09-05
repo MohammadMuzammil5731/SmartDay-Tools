@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
-      // Live cloud backend URL mapping
+      // Sahi full absolute route link mapping bina kisi text miss ke
       const res = await axios.post('https://onrender.com', formData);
       localStorage.setItem('token', res.data.token);
       navigate('/add-customer');
