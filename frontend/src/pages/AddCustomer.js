@@ -24,7 +24,7 @@ const AddCustomer = () => {
     try {
       const token = localStorage.getItem('token');
       // Sahi full backend endpoint URL
-      await axios.post('https://smartday-backend.onrender.com', formData, {
+      await axios.post('https://smartday-backend.onrender.com/api/customers', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setShowToast(true);

@@ -22,7 +22,7 @@ const FindCustomer = () => {
   const fetchCustomers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:5000/api/customers', {
+      const res = await axios.get('https://smartday-backend.onrender.com/api/customers', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCustomers(res.data);
@@ -35,7 +35,7 @@ const FindCustomer = () => {
     if(!window.confirm("Are you sure you want to delete this customer record?")) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/customers/${id}`, {
+      await axios.delete(`https://smartday-backend.onrender.com/api/customers/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchCustomers();
@@ -54,7 +54,7 @@ const FindCustomer = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/customers/${editingId}`, editForm, {
+      await axios.put(`https://smartday-backend.onrender.com/api/customers/${editingId}`, editForm, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

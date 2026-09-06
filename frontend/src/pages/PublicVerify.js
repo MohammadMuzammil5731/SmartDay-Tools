@@ -12,7 +12,7 @@ const PublicVerify = () => {
     const fetchProfile = async () => {
       try {
         // Live cloud backend database dynamic endpoint
-        const res = await axios.get('https://smartday-backend.onrender.com' + regNo);
+        const res = await axios.get('https://smartday-backend.onrender.com/api/customers/public/' + regNo);
         setCustomer(res.data);
       } catch (err) {
         setError('Invalid QR code or profile verification record missing');
